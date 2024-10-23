@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    //Exercise 1
+    console.log("Exercise 1");
+    let i;
+    for(i=100; i>=0; i-=10){
+      console.log(i);
+    }
+
+    //Exercise 2
+    console.log("\Exercise 2");
+    let start = Number(prompt("Enter a Start number: "));
+    let end = Number(prompt("Enter end number (must be smaller than start): "));
+    if(end > start){
+      alert("Invalid Entry.");
+    }
+    else{
+      let diff = start - end;
+      for(let i = start; i >= end; i-=10){
+        console.log(i);
+      }
+    }
+
+    //Exercise 3
+    console.log("\nExercise 3");
+    let n;
+    let numbers = [21, 45, 100, 12, 11, 78, 61, 4, 39, 22];
+    console.log("These are all the numbers in the array: ");
+    for(n=0; n<=numbers.length; n++){
+      console.log(numbers[n]);
+    }
+
+    console.log("\nThese are the even numbers in the array: ");
+    for(n=0; n<=numbers.length; n++){
+      if(numbers[n] % 2 == 0){
+        console.log(numbers[n]);
+      }
+    }
+
+    console.log("\nThese are the numbers in the array that are larger than 10 but less than 60: ");
+    for(n=0; n<=numbers.length; n++){
+      if(numbers[n] > 10 && numbers[n] < 60){
+        console.log(numbers[n]);
+      }
+    }
+
+  </script>
+  <title>Module 4.1.11 SECTION PRACTICE</title>
+</head>
+<body>
+  
+</body>
+</html>
