@@ -43,4 +43,24 @@ console.log(str.split('  '));  //  ->  ['java',  'script',  'language']
 console.log('192.168.1.1'.split('.'));    //  ->  ['192',  '168',  '1',  '1']
 */
 
-//
+//BigInt
+let  big  =  1234567890000000000000n;
+let  big2  =  1n;
+   
+console.log(big);  //  ->  1234567890000000000000n
+console.log(typeof  big);  //  ->  bigint
+   
+console.log(big2);  //  ->  1n
+console.log(7n  /  4n);  //  ->  1n
+
+
+//Number
+const  year  =  1991;
+let  delayInSeconds  =  0.00016;
+let  area  =  (16  *  3.14);
+let  halfArea  =  area  /  2;
+   
+console.log(year);  //  ->  1991;
+console.log(typeof  year);  //  ->  number;
+
+
