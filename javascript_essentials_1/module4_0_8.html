@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    
+    let x = window.prompt("Enter a number");
+    
+    //Question 1
+    if(x > 90 && x < 110){
+      alert("Bingo!");
+    }
+    else{
+      alert("Miss");
+    }
+
+    //Question 2
+    let msg = (x>90 && x <110) ? "Bingo!" : "Miss";
+    alert(msg);
+    
+
+    
+    //Question 3
+    let a = window.prompt("Enter first number");
+    let b = window.prompt("Enter second number");
+    let op = window.prompt("Enter operand: +, -, *, or /");
+    let r = 0;
+    switch(op){
+      case "+":
+        r = parseInt(a) + parseInt(b);
+        break;
+      case "-":
+        r = parseInt(a) - parseInt(b);
+        break;
+      case "*":
+        r = parseInt(a) * parseInt(b);
+        break;
+      case "/":
+        if(b != 0){
+          r = parseInt(a) / parseInt(b);
+        }
+        else{
+          alert("Infinity");
+        }
+        break;
+      default:
+        alert("Invalid operation");
+    }
+    alert(`${a} ${op} ${b} = ${r}`);
+    
+    /*SMAPLE SOLUTION FOR QUESTION 3
+    let firstNumber = Number(prompt("Enter first number"));
+    let secondNumber = Number(prompt("Enter second number"));
+    let operand = prompt("Enter operand (+, -, * or /)");
+    let result;
+
+    if (!Number.isNaN(firstNumber) && !Number.isNaN(secondNumber)) {
+        switch (operand) {
+            case "+": result = firstNumber + secondNumber; break;
+            case "-": result = firstNumber - secondNumber; break;
+            case "*": result = firstNumber * secondNumber; break;
+            case "/": result = firstNumber / secondNumber; break;
+            default: result = "Error: unknown operand";
+        }
+    } else {
+        result = "Error: at least one of the entered values is not a number";
+    }
+    alert(result);
+    */
+    
+  </script>
+
+  <title>Module 4.0.8 SECTION PRACTICE</title>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    let contacts = [{
+      name: "Maxwell Wright",
+      phone: "(0191) 719 6495",
+      email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+      }, {
+      name: "Raja Villarreal",
+      phone: "0866 398 2895",
+      email: "posuere.vulputate@sed.com"
+      }, {
+      name: "Helen Richards",
+      phone: "0800 1111",
+      email: "libero@convallis.edu"
+    }];
+
+    // write your code here
+    
+    let msg;
+    let menu;
+    do{
+      menu = window.prompt("Would you like to: \n1. Show the First Contact \n2. Show the last contact \n3. Add a new Contact \n0. EXIT");
+      switch(menu){
+        case "1":
+          alert(`First contact in the list: ${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`);
+          break;
+        case "2":
+          let len = contacts.length - 1;
+          alert(`Last contact in the list: ${contacts[len].name} / ${contacts[len].phone} / ${contacts[len].email}`);
+          break;
+        case "3":
+          let newContact = {};
+          newContact.name = window.prompt("Enter name: ");
+          newContact.phone = window.prompt("Enter phone number: ");
+          newContact.email = window.prompt("Enter email address: ");
+          if(newContact.name == "" || newContact.phone == "" || newContact.email == ""){
+            alert("One of the fields are empty, contact not added.");
+          }
+          else{
+            contacts.push(newContact);
+            alert("Contact added to the list.");
+          }
+          break;
+        default:
+          alert("Exiting the program");
+          break;
+      }
+    }while(menu != "0");
+    
+  </script>
+  <title>Module 4.0.9 LAB Conditional Execution</title>
+</head>
+<body>
+  
+</body>
+</html>
