@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    let contacts = [{
+    name: "Maxwell Wright",
+    phone: "(0191) 719 6495",
+    email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+    }, {
+    name: "Raja Villarreal",
+    phone: "0866 398 2895",
+    email: "posuere.vulputate@sed.com"
+    }, {
+    name: "Helen Richards",
+    phone: "0800 1111",
+    email: "libero@convallis.edu"
+    }];
+    
+    let isRunning = true;
+    
+    while(isRunning){
+      let menu = window.prompt("1. Display the first contact \n2. Display the last contact \n3. Display all contacts \n4. Add a new contact \n0. Exit program");
+      let len = contacts.length - 1;
+      
+      switch(menu){
+        case "1":
+          if(contacts.length > 0){
+            alert(`First contact:\nName: ${contacts[0].name}\nPhone: ${contacts[0].phone}\nEmail: ${contacts[0].email}`);
+          } else {
+            alert("No contacts available.");
+          }
+          break;
+          
+        case "2":
+          if(contacts.length > 0){
+            alert(`Last contact:\nName: ${contacts[len].name}\nPhone: ${contacts[len].phone}\nEmail: ${contacts[len].email}`);
+          } else {
+            alert("No contacts available.");
+          }
+          break;
+          
+        case "3":
+          if(contacts.length > 0){
+            let allContacts = "Contacts List:\n";
+            for(let i=0; i<=len; i++){
+              allContacts += `Contact ${i+1}:\nName: ${contacts[i].name}\nPhone: ${contacts[i].phone}\nEmail: ${contacts[i].email}\n\n`;
+            }
+            alert(allContacts);
+          } else {
+            alert("No contacts available.");
+          }
+          break;
+          
+        case "4":
+          let newContact = {};
+          newContact.name = window.prompt("Enter the name of the new contact");
+          newContact.phone = window.prompt("Enter the phone number of the new contact");
+          newContact.email = window.prompt("Enter the email of the new contact");
+          
+          if(newContact.name && newContact.phone && newContact.email){
+            contacts.push(newContact);
+            alert("New Contact Added.");
+          } else {
+            alert("All fields are required. Contact not added.");
+          }
+          break;
+          
+        case "0":
+          alert("Program Terminated.");
+          isRunning = false;  // Stop the loop
+          break;
+          
+        default:
+          alert("Invalid option. Please select a valid menu option.");
+          break;
+      }
+    }
+  </script>
+  <title>Module 4.1.12 LAB Loops</title>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    while(true){
+      let a = window.prompt("Enter first number");
+      let b = window.prompt("Enter second number");
+      let op = window.prompt("Enter operand: +, -, *, or /");
+      if(a == "Q" || b == "Q" || op == "Q"){
+        alert("Program Terminated.");
+        break;
+      }
+      else{
+        let r = 0;
+        switch(op){
+          case "+":
+            r = parseInt(a) + parseInt(b);
+            break;
+          case "-":
+            r = parseInt(a) - parseInt(b);
+            break;
+          case "*":
+            r = parseInt(a) * parseInt(b);
+            break;
+          case "/":
+            if(b != 0){
+              r = parseInt(a) / parseInt(b);
+            }
+            else{
+              alert("Infinity");
+            }
+            break;
+          default:
+            alert("Invalid operation");
+        }
+        alert(`${a} ${op} ${b} = ${r}`);
+      }
+
+    }
+    
+    
+
+  </script>
+  <title>Module 4.1.11 SECTION PRACTICE</title>
+</head>
+<body>
+  
+</body>
+</html>
