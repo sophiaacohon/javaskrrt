@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    let contacts = [{
+        name: "Maxwell Wright",
+        phone: "(0191) 719 6495",
+        email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+    }, {
+        name: "Raja Villarreal",
+        phone: "0866 398 2895",
+        email: "posuere.vulputate@sed.com"
+    }, {
+        name: "Helen Richards",
+        phone: "0800 1111",
+        email: "libero@convallis.edu"
+    }];
+
+    function showContact(contacts, idx){
+      if(contacts instanceof Array){
+        alert(`Showing Contact ${idx}:\n\nName: ${contacts[idx].name}\nPhone: ${contacts[idx].phone}\nEmail: ${contacts[idx].email}`);
+      }
+      else{
+        console("Contact not found.");
+      }
+    }
+
+    function showAllcontacts(contacts){
+      let len = contacts.length-1;
+      if(contacts.length > 0){
+        let allContacts = "Contacts List:\n";
+        for(let i=0; i<=len; i++){
+          allContacts += `Contact ${i}:\nName: ${contacts[i].name}\nPhone: ${contacts[i].phone}\nEmail: ${contacts[i].email}\n\n`;
+        }
+        alert(allContacts);
+      } else {
+        alert("No contacts available.");
+      }
+    }
+
+    function addNewContact(contacts, addName, addPhone, addEmail){
+      let newContact = {};
+      newContact.name = addName;
+      newContact.phone = addPhone;
+      newContact.email = addEmail;
+      if(newContact.name && newContact.phone && newContact.email){
+        contacts.push(newContact);
+        alert("New Contact Added");
+      }
+      else{
+        alert("All details are required. Contact not added.");
+      }
+    }
+
+    let isRunning = true;
+    while(isRunning){
+      let menu = window.prompt("1. Show a Contact \n2. Show All Contacts \n3. Add New Contact \n0. Exit Program");
+      let len = contacts.length-1;
+
+      switch(menu){
+        case "1":
+          let idxInput = prompt("Enter a number to look up a contact: ");
+          let idx = Number(idxInput);
+          showContact(contacts, idx);
+          break;
+        
+        case "2":
+          showAllcontacts(contacts);
+          break;
+
+        case "3":
+          let addName = window.prompt("Enter the name of the new contact");
+          let addPhone = window.prompt("Enter the phone number of the new contact");
+          let addEmail = window.prompt("Enter the email of the new contact");
+          addNewContact(contacts, addName, addPhone, addEmail);
+          break;
+        
+          case "0":
+            alert("Program Terminated.");
+            isRunning = false;
+            break;
+          
+          default: 
+          alert("Invalid option. Please select a valid menu option.");
+          break;
+      }
+    }
+
+  </script>
+  <title>MODULE 5.1.11 LAB Functions (Part 1)</title>
+</head>
+<body>
+  
+</body>
+</html>
