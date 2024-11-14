@@ -1,3 +1,4 @@
+
 //Exercise 1
 let numbers = [50, 10, 40, 30, 20];
 function compareNumbers(a, b){
@@ -56,7 +57,7 @@ console.log(action(add, 12, 10));
 console.log(action(sub, 12, 10));
 console.log(action(mult, 12, 10));
 
-
+/* you can uncomment to do the timer
 //Exercise 5
 let counter = 1;
 let intervalID = setInterval(function(){
@@ -65,3 +66,37 @@ let intervalID = setInterval(function(){
 setTimeout(function(){
   clearInterval(intervalID)
 }, 22000);
+*/
+
+//Exercise 6
+let n = 10;
+let fibonacci = function (n){
+  let retVal = 0;
+  if(n!=0){
+    if(n === 1){
+      retVal = 1;
+    }
+    else{
+      retVal = fibonacci(n-1) + fibonacci(n-2);
+    }
+  }
+  return retVal
+}
+console.log(fibonacci(n));
+
+//Exercise 7
+let fibb = n=> n==0 ? 0 : (n == 1 ? 1 : fibb (n-1) + fibb(n-2));
+console.log(fibb(n));
+
+
+//Exercise 8
+function fibbFor(n){
+  let a = 0, b= 1;
+  for(let i = 2; i <=n; i++){
+    let c = a;
+    a = b;
+    b += c;
+  }
+  return b;
+}
+console.log(fibbFor(n));
