@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    let contacts = [{
+        name: "Maxwell Wright",
+        phone: "(0191) 719 6495",
+        email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+    }, {
+        name: "Raja Villarreal",
+        phone: "0866 398 2895",
+        email: "posuere.vulputate@sed.com"
+    }, {
+        name: "Helen Richards",
+        phone: "0800 1111",
+        email: "libero@convallis.edu"
+    }];
+
+    let showContact = function(contacts, i) {
+        if (contacts instanceof Array && contacts[i]) {
+            alert(`${contacts[i].name} / ${contacts[i].phone} / ${contacts[i].email}`);
+        }
+    }
+
+    let showAllContacts = function(contacts) {
+      let allContacts = "Contacts List:\n";
+        if (contacts instanceof Array) {
+            for (contact of contacts) {
+                allContacts += (`${contact.name} / ${contact.phone} / ${contact.email}\n`);
+            }
+        }
+        alert(allContacts);
+    }
+
+    let addNewContact = function(contacts, name, phone, email) {
+        if (contacts instanceof Array && name && phone && email) {
+            contacts.push({
+                name: name,
+                phone: phone,
+                email: email
+            });
+        }
+    }
+
+    function sort(a, b){
+      let retVal = 0;
+      if (a > b){
+        retVal = 1;
+      }
+      else{
+        retVal = -1;
+      }
+      return retVal;
+    }
+
+    let isRunning = true;
+      while(isRunning){
+        let menu = window.prompt("1. Show a Contact \n2. Show All Contacts \n3. Add New Contact \n4.Sort by Name \n5. Sort by Phone Number \n6. Sort by Email \n0. Exit Program");
+        let len = contacts.length-1;
+
+        switch(menu){
+          case "1":
+            let idxInput = prompt("Enter a number to look up a contact: ");
+            let idx = Number(idxInput);
+            showContact(contacts, idx);
+            break;
+          
+          case "2":
+            showAllContacts(contacts);
+            break;
+
+          case "3":
+            let name = window.prompt("Enter the name of the new contact");
+            let phone = window.prompt("Enter the phone number of the new contact");
+            let email = window.prompt("Enter the email of the new contact");
+            addNewContact(contacts, name, phone, email);
+            break;
+
+          case "4":
+            // Sort by name
+            contacts.sort((a, b) => a.name.localeCompare(b.name));
+            alert("Contacts sorted by name.");
+            break;
+          
+          case "5":
+            // Sort by phone number
+            contacts.sort((a, b) => a.phone.localeCompare(b.phone));
+            alert("Contacts sorted by phone number.");
+            break;
+
+          case "6":
+            // Sort by email
+            contacts.sort((a, b) => a.email.localeCompare(b.email));
+            alert("Contacts sorted by email.");
+            break;
+          
+          case "0":
+            alert("Program Terminated.");
+            isRunning = false;
+            break;
+            
+          default: 
+            alert("Invalid option. Please select a valid menu option.");
+            break;
+        }
+      }
+  </script>
+
+  <title>MODULE 5.1.12 LAB Functions (Part 2)</title>
+</head>
+<body>
+  
+</body>
+</html>
